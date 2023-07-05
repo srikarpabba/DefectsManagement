@@ -5,10 +5,8 @@
         public static IServiceCollection AddIdentityServices(this IServiceCollection services,
            IConfiguration config)
         {
-            services.AddDbContext<AppIdentityDbContext>(opt =>
-            {
-                opt.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-            });
+            string? connectionString = config.GetConnectionString("DefaultConnection");
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             services.AddIdentity<AppUser, AppRole>(opt =>
                 {
@@ -33,7 +31,7 @@
                         ValidateAudience = false,
                         ValidateLifetime = true,
                     };
-                });            
+                });
 
             services.AddAuthorization();
 

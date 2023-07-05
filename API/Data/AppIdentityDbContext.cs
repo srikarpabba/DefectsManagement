@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-
-namespace API.Data
+﻿namespace API.Data
 {
     public class AppIdentityDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
