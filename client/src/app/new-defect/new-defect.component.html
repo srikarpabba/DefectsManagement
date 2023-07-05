@@ -1,0 +1,68 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-6">
+        <h1>Add new defect</h1>
+        <form [formGroup]="newDefectForm" (ngSubmit)="onSubmit()">
+            <app-text-input [formControl]="newDefectForm.controls['title']" [label]="'Title'"></app-text-input>
+            <app-text-input [formControl]="newDefectForm.controls['defectDetails']"
+                [label]="'Details'"></app-text-input>
+            <app-text-input [formControl]="newDefectForm.controls['stepsToReproduce']" [label]="'steps to reproduce'"></app-text-input>
+
+            <h6 class="mb-3">Select a priority</h6>
+            <div class="col-6 mb-3 mx-2" *ngFor="let priority of priorities" style="display: inline;">
+                <input type="radio" [value]='priority' formControlName="priority"
+                    [formControl]="newDefectForm.controls['priority']" class="form-check-input">
+                <label for="{{priority}}" class="form-check-label ms-2 mb-3">
+                    <span class="label-description">{{priority}}</span>
+                </label>
+            </div>
+
+            <h6 class="mb-3 ">Severity</h6>
+            <select class="form-select mb-4" #severitySelect (change)="onSeverityChange(severitySelect.value)" formControlName="severity"
+                [formControl]="newDefectForm.controls['severity']">
+                <option value="">Choose Severity</option>
+                <option *ngFor="let severity of severities" [ngValue]="severity">
+                    {{severity}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf="severity?.invalid">
+                <sup>*</sup>Please select severity
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="mb-3 ">Detected on</h6>
+                    <input type="date" formControlName="detectedOn" class="form-control mb-3" id="detectedOn"
+                        [formControl]="newDefectForm.controls['detectedOn']" />
+                    <div *ngIf="f.detectedOn.errors" class="invalid-feedback">
+                        <div *ngIf="f.detectedOn.errors?.['required']">Detected on is required</div>
+                    </div>
+                </div>
+                <div class="col">
+                    <h6 class="mb-3 ">Expected Resolution</h6>
+                    <input type="date" formControlName="expectedResolution" class="form-control mb-3"
+                        id="expectedResolution" [formControl]="newDefectForm.controls['expectedResolution']" />
+                    <div *ngIf="f.expectedResolution.errors" class="invalid-feedback">
+                        <div *ngIf="f.expectedResolution.errors?.['required']">Expected Resolution is required</div>
+                    </div>
+                </div>
+            </div>
+            <app-text-input [formControl]="newDefectForm.controls['status']" [label]="'Status'"
+                class="mb-3"></app-text-input>
+            <div class="row">
+                <div class="col">
+                    <app-text-input [formControl]="newDefectForm.controls['reportedByTesterId']"
+                        [label]="'Reported by tester id'" class="mb-3 "></app-text-input>
+                </div>
+                <div class="col">
+                    <app-text-input [formControl]="newDefectForm.controls['assignedToDevloperId']"
+                        [label]="'Assigned to developer id'" class="mb-3 "></app-text-input>
+                </div>
+            </div>
+            <!-- <app-text-input type="text-area" [formControl]="newDefectForm.controls['resolution']" [label]="'Resolution'"
+                class="mb-3 "></app-text-input> -->
+            <div class="d-grid">
+                <button [disabled]="newDefectForm.invalid" class="btn btn-lg btn-primary mt-3"
+                    type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

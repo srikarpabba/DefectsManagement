@@ -1,0 +1,39 @@
+<h3 class="mt-5">
+    Defects List
+</h3>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-hover" style="cursor: pointer;">
+                <thead class="thead-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Details</th>
+                        <th>Steps To Reproduce</th>
+                        <th>Severity</th>
+                        <th>Priority</th>
+                        <th>Detected On</th>
+                        <th>Expected Resolution</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let defect of defects">
+                        <th># {{defect.id}}</th>
+                        <td>{{defect.title}}</td>
+                        <td>{{defect.defectDetails}}</td>
+                        <td>{{defect.stepsToReproduce}}</td>
+                        <td>{{defect.severity}}</td>
+                        <td>{{defect.priority}}</td>
+                        <td>{{defect.detectedOn}}</td>
+                        <td>{{defect.expectedResolution}}</td>
+                        <td>{{defect.status}}</td>
+                        <td><a routerLink="/defects/{{defect.id}}"><i class="fa fa-solid fa-eye"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

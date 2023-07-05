@@ -1,0 +1,75 @@
+<div *ngIf="defect">
+    <h3 class="mt-5">
+        {{defect.title}}
+    </h3>
+    <div class="container mt-5 py-2" style="background-color: rgb(238, 236, 232);border: 1px solid;border-radius: 5px;">
+        <div class="row mb-3 text-center py-2 border-bottom">
+            <div class="col-md-8 themed-grid-col">
+                <div class="pb-3 border-bottom">
+                    <h6>Defect: {{defect.title}} </h6>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-4 themed-grid-col">
+                        <h6>Severity : {{defect.severity}} </h6>
+                    </div>
+                    <div class="col-md-4 themed-grid-col border-start">
+                        <h6>Priority: {{defect.priority}} </h6>
+                    </div>
+                    <div class="col-md-4 themed-grid-col border-start">
+                        <h6>Status: {{defect.status}} </h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 themed-grid-col border-start">
+                <h6>Defect Details: </h6>
+                <label>{{defect.defectDetails}}</label>
+            </div>
+        </div>
+
+        <div class="col-12 py-2 border-bottom">
+            <div class="row mb-3 text-center ">
+                <div class="col-4 themed-grid-col">
+                    <h6>Steps to reproduce</h6>
+                    <label>{{defect.stepsToReproduce}}</label>
+                </div>
+                <div class="col-4 themed-grid-col border-start">
+                    <h6>Detected On</h6>
+                    <label>{{defect.detectedOn}}</label>
+                </div>
+                <div class="col-4 themed-grid-col border-start">
+                    <h6>Expected Resolution</h6>
+                    <label>{{defect.expectedResolution}}</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 py-2 border-bottom">
+            <div class="row mb-3 text-center">
+                <div class="col-6 themed-grid-col">
+                    <h6>reported by tester</h6>
+                    <label>{{defect.reportedByTesterId}}</label>
+                </div>
+                <div class="col-6 themed-grid-col" border-start>
+                    <h6>Assigned to devloper</h6>
+                    <label>{{defect.assignedToDevloperId}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 py-2 border-bottom">
+            <div class="row mb-3 text-center">
+                <div class="col-2"></div>
+                <div class="col-8 themed-grid-col">
+                    <h6>Resolution</h6>
+                    <form [formGroup]="resolutionForm" (ngSubmit)="onSubmit()">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                            [formControl]="resolutionForm.controls['resolution']" label="'resolution'"></textarea>
+                        <button [disabled]="resolutionForm.invalid" class="btn btn-md btn-primary mt-3"
+                            type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="col-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
