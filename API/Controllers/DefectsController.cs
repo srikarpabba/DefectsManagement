@@ -62,21 +62,18 @@
         }
 
         [HttpPost("resolve/{defectid}")]
-        public async Task<IActionResult> SubmitResolution(string[] resolution, int defectid)
+        public async Task<IActionResult> SubmitResolution(int defectid, ResolutionDto resolution)
         {
             try
-            {
-                ResolutionDto resolutionDto = new ResolutionDto();
-                //resolutionDto.Resolution = resolution;
-                resolutionDto.DefectId = defectid;
-                await _defectsManagement.ProvideResolution(resolutionDto);
+            {                
+                await _defectsManagement.ProvideResolution(resolution);
                 return Ok();
             }
             catch (Exception)
             {
                 return BadRequest();
             }
-            
+
         }
 
         [HttpGet("priorities")]

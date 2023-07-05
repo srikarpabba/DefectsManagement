@@ -22,5 +22,4 @@ export class DefectsService {
   provideResolution(values: any, id: number) {
     return this.http.post(this.baseUrl + 'defects/resolve/' + id, values);
   }
-  
 }

@@ -43,7 +43,7 @@ export class NewDefectComponent implements OnInit, ControlValueAccessor {
     expectedResolution: ['', Validators.required],
     reportedByTesterId: ['', Validators.required],
     assignedToDevloperId: ['', Validators.required],
-    status: ['', Validators.required],
+    //status: ['', Validators.required],
     //resolution: ['', Validators.required],
   })
 

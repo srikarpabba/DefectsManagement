@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DefectsService } from '../defects-list/defects-list.service';
 import { Defect } from '../models/defect';
+import { Resolution } from '../models/resolution';
 
 @Component({
   selector: 'app-defect-details',
@@ -12,6 +13,8 @@ import { Defect } from '../models/defect';
 })
 export class DefectDetailsComponent implements OnInit {
   defect?: Defect;
+  resolution?: Resolution;  
+  defectid : number=0;
 
   constructor(private defectsService: DefectsService, private activatedRoute: ActivatedRoute, private fb: FormBuilder, private toast: ToastrService, private router: Router) { }
 
@@ -21,18 +24,21 @@ export class DefectDetailsComponent implements OnInit {
 
   getDefect() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.defectid = Number(id);
     if (id) this.defectsService.getDefectById(+id).subscribe({
       next: defect => this.defect = defect
-    })
+    })    
   }
 
   resolutionForm = this.fb.group({
-    resolution: ['', Validators.required],
+    resolution: ['', Validators.required],   
+    defectid: ''
   })
 
-  onSubmit() {
+  onSubmit() {   
     debugger;    
-    this.defectsService.provideResolution(this.resolutionForm.value, +this.defect?.id!).subscribe({
+    this.resolutionForm.value.defectid = this.defectid.toString();     
+    this.defectsService.provideResolution(this.resolutionForm.value, this.defectid).subscribe({
       next: () => {
         this.toast.success('Successfully provided resolution', 'Success')
         this.toast.success('Closing resolution', 'Success')

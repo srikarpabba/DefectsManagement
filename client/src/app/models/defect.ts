@@ -10,5 +10,4 @@ export interface Defect {
     reportedByTesterId: string;
     assignedToDevloperId: string;
     status: string;
-    resolution: string;
   }

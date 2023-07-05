@@ -26,7 +26,7 @@
                 ExpectedResolution = defect.ExpectedResolution,
                 ReportedByTesterId = defect.ReportedByTesterId,
                 AssignedToDevloperId = defect.AssignedToDevloperId,
-                Status = defect.Status
+                Status = Status.Active.ToString(),
             };
             await _dbContext.Defects.AddAsync(df);
             await _dbContext.SaveChangesAsync();
@@ -35,7 +35,7 @@
         public async Task<List<Defect>> GetAllDefects()
         {
             List<Defect> defects = new();
-            defects = await _dbContext.Defects.ToListAsync();
+            defects = await _dbContext.Defects.Where(t => t.Status != Status.Resolved.ToString()).ToListAsync();
 
             return defects;
         }
@@ -58,6 +58,7 @@
                     ResolutionDate = DateTime.Now.ToString(),
                     DefectId = resolution.DefectId,
                 };
+                x.Status = Status.Resolved.ToString();
                 await _dbContext.Resolutions.AddAsync(res);
                 await _dbContext.SaveChangesAsync();
             }            
