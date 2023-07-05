@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DefectsManagement\\API\\API.csproj": {}
+    "C:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj": {}
   },
   "projects": {
-    "D:\\DefectsManagement\\API\\API.csproj": {
+    "C:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DefectsManagement\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "D:\\DefectsManagement\\API\\API.csproj",
+        "projectPath": "C:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj",
         "packagesPath": "C:\\Users\\pabba\\.nuget\\packages\\",
-        "outputPath": "D:\\DefectsManagement\\API\\obj\\",
+        "outputPath": "C:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pabba\\AppData\\Roaming\\NuGet\\NuGet.Config",

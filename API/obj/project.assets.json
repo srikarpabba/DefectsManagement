@@ -4195,11 +4195,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\DefectsManagement\\API\\API.csproj",
+      "projectUniqueName": "c:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "d:\\DefectsManagement\\API\\API.csproj",
+      "projectPath": "c:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\API.csproj",
       "packagesPath": "C:\\Users\\pabba\\.nuget\\packages\\",
-      "outputPath": "d:\\DefectsManagement\\API\\obj\\",
+      "outputPath": "c:\\Users\\pabba\\OneDrive\\Documents\\GitHub\\DefectsManagement\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\pabba\\AppData\\Roaming\\NuGet\\NuGet.Config",
