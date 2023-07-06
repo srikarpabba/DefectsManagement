@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from '../environments/environment';
-import { Priority } from '../models/priority';
-import { Severity } from '../models/severity';
+import { Priority } from '../shared/models/priority';
+import { Severity } from '../shared/models/severity';
 
 
 @Injectable({

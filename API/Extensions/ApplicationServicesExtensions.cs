@@ -16,6 +16,8 @@ namespace API.Extensions
                 });
             });
             services.AddScoped<IDefectsManagementService, DefectsmanagementService>();
+            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserService, UserService>();
             //With the FormOptions configuration, we set the limit for its different properties to the maximum value.
             services.Configure<FormOptions>(o =>
             {

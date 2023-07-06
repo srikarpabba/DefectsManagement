@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DefectsService } from '../defects-list/defects-list.service';
-import { Defect } from '../models/defect';
+import { Defect } from '../shared/models/defect';
 
 @Component({
   selector: 'app-defects-list',

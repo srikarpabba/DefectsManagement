@@ -31,6 +31,7 @@
 	  </Reference>
 	</ItemGroup>
 	<ItemGroup>
+		<Using Include="AutoMapper"></Using>
 		<Using Include="API.Entities.Identity"></Using>
 		<Using Include="API.Data"></Using>
 		<Using Include="API.Entities"></Using>
@@ -38,6 +39,7 @@
 		<Using Include="API.Entities.Identity"></Using>
 		<Using Include="API.Extensions"></Using>
 		<Using Include="API.Interfaces"></Using>
+		<Using Include="API.Errors"></Using>
 		<Using Include="Microsoft.EntityFrameworkCore"></Using>
 		<Using Include="Microsoft.EntityFrameworkCore.Metadata.Builders"></Using>
 		<Using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"></Using>
@@ -48,6 +50,7 @@
 		<Using Include="Microsoft.AspNetCore.Mvc"></Using>
 		<Using Include="System.Runtime.Serialization"></Using>
 		<Using Include="System.Text"></Using>
+		<Using Include="System.Security.Claims"></Using>
 		
 	</ItemGroup>
 </Project>

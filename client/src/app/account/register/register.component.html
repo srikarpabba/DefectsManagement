@@ -1,0 +1,47 @@
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-6">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="text-center mb-4">
+                <h1 class="h3 mb-3 fw-normal">Register User</h1>
+            </div>
+            <div class="row mb-3 ">
+                <div class="col">
+                    <app-text-input [formControl]="registerForm.controls['userName']" [label]="'User Name'"></app-text-input>
+                </div>
+                <div class="col">
+                    <app-text-input [formControl]="registerForm.controls['emailAddress']" [label]="'Email address'"></app-text-input>
+                </div>
+            </div>
+            <div class="row mb-3 ">
+                <div class="col">
+                    <app-text-input [formControl]="registerForm.controls['firstName']" [label]="'First Name'"></app-text-input>
+                </div>
+                <div class="col">
+                    <app-text-input [formControl]="registerForm.controls['lastName']" [label]="'Last Name'"></app-text-input>
+                </div>
+            </div>
+            <h6 class="mb-3">Select a role</h6>
+            <div class="col-6 mb-3 mx-2" *ngFor="let role of roles" style="display: inline;">
+                <input type="radio" [value]='role' [formControl]="registerForm.controls['roleName']" class="form-check-input">
+                <label for="{{role.name}}" class="form-check-label ms-2 mb-3">
+                    <span class="label-description">{{role}}</span>
+                </label>
+            </div>
+            <div class="row mb-3 ">                
+                <div class="col-8">
+                    <app-text-input [formControl]="registerForm.controls['password']" [label]="'Password'" [type]="'password'">
+                    </app-text-input>
+                </div>                 
+            </div>
+            <ul class="text-danger list-unstyled" *ngIf="errors">
+                <li *ngFor="let error of errors">
+                    {{error}}
+                </li>
+            </ul>
+            <div class="d-grid">
+                <button [disabled]="registerForm.invalid" class="btn btn-lg btn-primary mt-3" type="submit">Sign
+                    up</button>
+            </div>
+        </form>
+    </div>
+</div>

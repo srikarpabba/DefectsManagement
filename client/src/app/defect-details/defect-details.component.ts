@@ -3,8 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DefectsService } from '../defects-list/defects-list.service';
-import { Defect } from '../models/defect';
-import { Resolution } from '../models/resolution';
+import { Defect } from '../shared/models/defect';
+import { Resolution } from '../shared/models/resolution';
 
 @Component({
   selector: 'app-defect-details',

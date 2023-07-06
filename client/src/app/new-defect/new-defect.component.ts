@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Priority } from '../models/priority';
-import { Severity } from '../models/severity';
+import { Priority } from '../shared/models/priority';
+import { Severity } from '../shared/models/severity';
 import { NewDefectService } from '../new-defect/new-defect.service';
 
 @Component({
@@ -50,7 +50,8 @@ export class NewDefectComponent implements OnInit, ControlValueAccessor {
   // convenience getter for easy access to form fields
   get f() { return this.newDefectForm.controls; }
 
-  onSubmit() {    
+  onSubmit() {  
+    debugger;  
     this.newDefectService.newDefectReport(this.newDefectForm.value).subscribe({
       next: () => {
         this.toast.success('Successfully submitted new defect', 'Success')
